@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Quiz App</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="quiz-container">
+    <!-- Setup Screen -->
+    <div id="setup-screen">
+      <h1>Quiz App</h1>
+      
+      <div class="form-group">
+        <label for="questionCount">Number Of Questions</label>
+        <select id="questionCount" class="form-control">
+          <option value="5">5</option>
+          <option value="10">10</option>
+          <option value="15">15</option>
+          <option value="20" selected>20</option>
+        </select>
+      </div>
+      
+      <div class="form-group">
+        <label for="category">Select Category</label>
+        <select id="category" class="form-control">
+          <option value="Thermodyanamics">Thermodyanamics</option>
+          <option value="science">Science</option>
+          <option value="Materials">Materials</option>
+          <option value="geography">Geography</option>
+          <option value="books" selected>Books</option>
+        </select>
+      </div>
+      
+      <div class="form-group">
+        <label for="difficulty">Select Difficulty</label>
+        <select id="difficulty" class="form-control">
+          <option value="easy">Easy</option>
+          <option value="medium">Medium</option>
+          <option value="hard" selected>Hard</option>
+        </select>
+      </div>
+      
+      <div class="form-group">
+        <label for="time">Select Time Per Question</label>
+        <select id="time" class="form-control">
+          <option value="10">10 Seconds</option>
+          <option value="20">20 Seconds</option>
+          <option value="30" selected>30 Seconds</option>
+          <option value="60">60 Seconds</option>
+        </select>
+      </div>
+      
+      <button id="startBtn" class="btn-primary">Start quiz</button>
+      
+      <h1 class="bottom-title">Quiz App</h1>
+    </div>
+    
+    <!-- Quiz Screen -->
+    <div id="quiz-screen" style="display: none;">
+      <div class="quiz-header">
+        <div class="quiz-info">
+          <span id="category-display">Category: Books</span>
+          <span id="difficulty-display">Difficulty: Hard</span>
+        </div>
+        <div class="timer-container">
+          <div id="timer-bar"></div>
+        </div>
+        <div class="question-counter">
+          Question <span id="current-question">1</span>/<span id="total-questions">20</span>
+        </div>
+      </div>
+      
+      <div id="question-container">
+        <p id="question">Question text</p>
+        <div id="options" class="options-container"></div>
+      </div>
+      
+      <div class="controls">
+        <button id="nextBtn" class="btn-primary">Next Question</button>
+      </div>
+    </div>
+    
+    <!-- Results Screen -->
+    <div id="results-screen" style="display: none;">
+      <h1>Quiz Completed!</h1>
+      <div class="results-container">
+        <p id="score-display"></p>
+        <p id="time-taken"></p>
+        <div class="chart-container">
+          <div id="correct-bar" class="result-bar correct"></div>
+          <div id="incorrect-bar" class="result-bar incorrect"></div>
+        </div>
+        <div class="legend">
+          <div class="legend-item">
+            <div class="legend-color correct"></div>
+            <span>Correct</span>
+          </div>
+          <div class="legend-item">
+            <div class="legend-color incorrect"></div>
+            <span>Incorrect</span>
+          </div>
+        </div>
+      </div>
+      <button id="restart-btn" class="btn-primary">Play Again</button>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
